@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BBA279D51E01F571006D83BC /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = BBA279D41E01F571006D83BC /* readme.md */; };
 		BBD98F8F1E01CDCB00A68002 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD98F8E1E01CDCB00A68002 /* main.swift */; };
+		BBD98F961E01CE4700A68002 /* HTMLElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD98F951E01CE4700A68002 /* HTMLElement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +25,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BBA279D41E01F571006D83BC /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		BBD98F8B1E01CDCB00A68002 /* HTMLParser */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HTMLParser; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBD98F8E1E01CDCB00A68002 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		BBD98F951E01CE4700A68002 /* HTMLElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLElement.swift; sourceTree = "<group>"; };
+		BBD98F971E01CEFD00A68002 /* HTMLParser.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = HTMLParser.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +46,8 @@
 		BBD98F821E01CDCA00A68002 = {
 			isa = PBXGroup;
 			children = (
+				BBA279D41E01F571006D83BC /* readme.md */,
+				BBD98F971E01CEFD00A68002 /* HTMLParser.playground */,
 				BBD98F8D1E01CDCB00A68002 /* HTMLParser */,
 				BBD98F8C1E01CDCB00A68002 /* Products */,
 			);
@@ -58,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				BBD98F8E1E01CDCB00A68002 /* main.swift */,
+				BBD98F951E01CE4700A68002 /* HTMLElement.swift */,
 			);
 			path = HTMLParser;
 			sourceTree = "<group>";
@@ -89,7 +97,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Larsen Tech";
 				TargetAttributes = {
 					BBD98F8A1E01CDCA00A68002 = {
@@ -121,6 +129,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBD98F8F1E01CDCB00A68002 /* main.swift in Sources */,
+				BBA279D51E01F571006D83BC /* readme.md in Sources */,
+				BBD98F961E01CE4700A68002 /* HTMLElement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +155,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -193,6 +204,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -212,6 +224,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -250,6 +263,7 @@
 				BBD98F941E01CDCB00A68002 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
