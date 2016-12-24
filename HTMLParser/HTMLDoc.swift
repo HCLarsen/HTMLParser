@@ -43,7 +43,7 @@ class HTMLDoc {
                             }
                             self.elements.append(element)
                             if element.name != "meta" && !name.hasSuffix("/") {
-                                // meta tags are self closing, but lack the /> closing
+                                // meta tags are self closing, but lack the /> end
                                 parent = element
                             }
                         }
@@ -69,9 +69,10 @@ class HTMLDoc {
         var string = ""
         if self.elements.count > 0 {
             string += "Document has \(self.elements.count) elements\n"
-        }
-        for element in self.elements {
-            print(element.fullDescription())
+            if self.elements[0].attributes.keys.contains("html") {
+                string += "Doctype: HTML\n"
+            }
+            string += self.elements[1].simpleDescription(indent: 0)
         }
         return string
     }

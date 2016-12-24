@@ -157,4 +157,5 @@ var i = 7
 print(html.simpleDescription())
 print(html.elements[i].fullDescription())
 html.elements.count
+print(html.elements[0].attributes)
 

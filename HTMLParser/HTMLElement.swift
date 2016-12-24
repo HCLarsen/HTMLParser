@@ -59,6 +59,21 @@ class HTMLElement {
         self.children.append(child)
     }
     
+    func simpleDescription(indent: Int) -> String {
+        var string = "\(indents(indent))Tag: \(self.name)\n"
+        if let content = self.content {
+            string += "\(indents(indent))Content: \(content)\n"
+        }
+        if self.children.count > 0 {
+            string += "\(indents(indent))Children:\n"
+            for child in self.children {
+                string += "\(child.simpleDescription(indent: indent + 1))"
+            }
+        }
+        
+        return string
+    }
+    
     func fullDescription() -> String {
         var string = "Tag: \(self.name)\n"
         if let parent = self.parent {
@@ -78,6 +93,17 @@ class HTMLElement {
             string += "Child elements:\n"
             for child in self.children {
                 string += "\t\(child.name)\n"
+            }
+        }
+        
+        return string
+    }
+    
+    func indents(_ num: Int) -> String {
+        var string = ""
+        if num > 0 {
+            for _ in 1...num {
+                string += "\t"
             }
         }
         
