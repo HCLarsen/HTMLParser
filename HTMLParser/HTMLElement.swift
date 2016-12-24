@@ -10,71 +10,77 @@ import Foundation
 
 class HTMLElement {
     var name = ""
-    var content: String?
     var attributes = [String: String]()
     var children = [HTMLElement]()
+    var content: String?
     var parent: HTMLElement?
     
     init(element: String) {
         // Parses the string of the opening tag and processes attributes
-        let stringScanner = Scanner(string: element)
+        let scanner = Scanner(string: element.trimmingCharacters(in: ["<", ">", "/"]))
         var nsName: NSString?
         var attrName: String
         var attrValue: String
+        let alphaCharacters = CharacterSet.alphanumerics
         
-        stringScanner.scanUpTo(" ", into: &nsName)
+        scanner.scanUpTo(" ", into: &nsName)
         if let name = nsName {
             self.name = name as String
         }
         
         var key = 0
-        while !stringScanner.isAtEnd {
+        while !scanner.isAtEnd {
             key += 1
             attrName = ""
             attrValue = ""
             
-            let array = Array(element.unicodeScalars)
-            var string = ""
-            for i in stringScanner.scanLocation+1..<element.characters.count {
-                string += String(array[i])
-            }
-            string = string.trimmingCharacters(in: [" "])
-            if string.isEmpty {
-                break
-            }
-            if let space = string.characters.index(of: " "), let equal = string.characters.index(of: "=") {
-                if equal < space {
-                    stringScanner.scanUpTo("=", into: &nsName)
-                    if let name = nsName {
-                        attrName = name.trimmingCharacters(in: ["\"", " "])
-                    }
-                    
-                    stringScanner.scanUpTo("\"", into: &nsName) // Skipping over the opening quote
-                    stringScanner.scanUpTo("\" ", into: &nsName)
-                    if let value = nsName {
-                        attrValue = value.trimmingCharacters(in: ["\"", " "])
-                    }
-                } else {
-                    // boolean attributes have no value, different logic is required
-                    stringScanner.scanUpTo(" ", into: &nsName)  // Skipping over the space before the boolean attribute
-                    stringScanner.scanUpTo(" ", into: &nsName)
-                    if let name = nsName {
-                        attrName = name.trimmingCharacters(in: ["\"", " "])
-                    }
-                    attrValue = ""
-                }
-                attrValue += String(key)
-                self.attributes[attrName] = attrValue
+            scanner.scanUpToCharacters(from: alphaCharacters, into: &nsName)
+            scanner.scanCharacters(from: alphaCharacters, into: &nsName)
+            if let name = nsName as String? {
+                attrName = name
             }
             
+            if scanner.scanCharacters(from: ["="], into: &nsName) {
+                scanner.scanCharacters(from: ["\""], into: &nsName)
+                scanner.scanUpToCharacters(from: ["\""], into: &nsName)
+                if let value = nsName {
+                    attrValue = value.trimmingCharacters(in: ["\"", " "])
+                }
+                scanner.scanCharacters(from: ["\""], into: &nsName)
+            } else {
+                attrValue = ""
+            }
+            
+            self.attributes[attrName] = attrValue
         }
     }
     
     func addChild(child: HTMLElement) {
-        
+        self.children.append(child)
     }
     
-    func setParent(parent: HTMLElement) {
-        self.parent = parent
+    func fullDescription() -> String {
+        var string = "Tag: \(self.name)\n"
+        if let parent = self.parent {
+            string += "Parent: \(parent.name)\n"
+        }
+        if let content = self.content {
+            string += "Content: \(content)\n"
+        }
+        if self.attributes.count > 0 {
+            var attributeString = "Attributes: \n"
+            for attribute in attributes {
+                attributeString += "\t\(attribute.key): \(attribute.value)\n"
+            }
+            string += attributeString
+        }
+        if self.children.count > 0 {
+            string += "Child elements:\n"
+            for child in self.children {
+                string += "\t\(child.name)\n"
+            }
+        }
+        
+        return string
     }
 }

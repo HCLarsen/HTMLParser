@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BBA279D51E01F571006D83BC /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = BBA279D41E01F571006D83BC /* readme.md */; };
+		BB70777C1E0B1D7200CDC009 /* HTMLDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70777B1E0B1D7200CDC009 /* HTMLDoc.swift */; };
 		BBD98F8F1E01CDCB00A68002 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD98F8E1E01CDCB00A68002 /* main.swift */; };
 		BBD98F961E01CE4700A68002 /* HTMLElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD98F951E01CE4700A68002 /* HTMLElement.swift */; };
 /* End PBXBuildFile section */
@@ -25,10 +25,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BB70777B1E0B1D7200CDC009 /* HTMLDoc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLDoc.swift; sourceTree = "<group>"; };
 		BBA279D41E01F571006D83BC /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		BBD98F8B1E01CDCB00A68002 /* HTMLParser */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HTMLParser; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBD98F8E1E01CDCB00A68002 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		BBD98F951E01CE4700A68002 /* HTMLElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLElement.swift; sourceTree = "<group>"; };
+		BBD98F951E01CE4700A68002 /* HTMLElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTMLElement.swift; path = HTMLParser/HTMLElement.swift; sourceTree = SOURCE_ROOT; };
 		BBD98F971E01CEFD00A68002 /* HTMLParser.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = HTMLParser.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -46,10 +47,10 @@
 		BBD98F821E01CDCA00A68002 = {
 			isa = PBXGroup;
 			children = (
-				BBA279D41E01F571006D83BC /* readme.md */,
 				BBD98F971E01CEFD00A68002 /* HTMLParser.playground */,
 				BBD98F8D1E01CDCB00A68002 /* HTMLParser */,
 				BBD98F8C1E01CDCB00A68002 /* Products */,
+				BBA279D41E01F571006D83BC /* readme.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +67,7 @@
 			children = (
 				BBD98F8E1E01CDCB00A68002 /* main.swift */,
 				BBD98F951E01CE4700A68002 /* HTMLElement.swift */,
+				BB70777B1E0B1D7200CDC009 /* HTMLDoc.swift */,
 			);
 			path = HTMLParser;
 			sourceTree = "<group>";
@@ -129,7 +131,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBD98F8F1E01CDCB00A68002 /* main.swift in Sources */,
-				BBA279D51E01F571006D83BC /* readme.md in Sources */,
+				BB70777C1E0B1D7200CDC009 /* HTMLDoc.swift in Sources */,
 				BBD98F961E01CE4700A68002 /* HTMLElement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
