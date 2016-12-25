@@ -83,11 +83,18 @@ class HTMLElement {
     }
 }
 
-/*var element = HTMLElement(element: "<meta name=\"viewport\" content=\"width=device-width\">")
+var element = HTMLElement(element: "<meta name=\"viewport\" content=\"width=device-width\">")
 
 var element2 = HTMLElement(element: "<img src=\"image.jpg\" />")
 
-var element3 = HTMLElement(element: "<div id=\"test\" class=\"test class\" hidden >")*/
+var div = HTMLElement(element: "<div id=\"test\" class=\"test class\" hidden >")
+
+if let classes = div.attributes["class"] {
+    print(classes)
+}
+if let id = div.attributes["id"] {
+    print(id)
+}
 
 class HTMLDoc {
     var startCharacters = CharacterSet.alphanumerics.union(["<"])

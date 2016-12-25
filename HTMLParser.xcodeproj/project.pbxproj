@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BB70777C1E0B1D7200CDC009 /* HTMLDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70777B1E0B1D7200CDC009 /* HTMLDoc.swift */; };
+		BB70777C1E0B1D7200CDC009 /* HTMLDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70777B1E0B1D7200CDC009 /* HTMLDocument.swift */; };
 		BBD98F8F1E01CDCB00A68002 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD98F8E1E01CDCB00A68002 /* main.swift */; };
 		BBD98F961E01CE4700A68002 /* HTMLElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD98F951E01CE4700A68002 /* HTMLElement.swift */; };
 /* End PBXBuildFile section */
@@ -25,7 +25,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		BB70777B1E0B1D7200CDC009 /* HTMLDoc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLDoc.swift; sourceTree = "<group>"; };
+		BB70777B1E0B1D7200CDC009 /* HTMLDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLDocument.swift; sourceTree = "<group>"; };
 		BBA279D41E01F571006D83BC /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		BBD98F8B1E01CDCB00A68002 /* HTMLParser */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HTMLParser; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBD98F8E1E01CDCB00A68002 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -67,7 +67,7 @@
 			children = (
 				BBD98F8E1E01CDCB00A68002 /* main.swift */,
 				BBD98F951E01CE4700A68002 /* HTMLElement.swift */,
-				BB70777B1E0B1D7200CDC009 /* HTMLDoc.swift */,
+				BB70777B1E0B1D7200CDC009 /* HTMLDocument.swift */,
 			);
 			path = HTMLParser;
 			sourceTree = "<group>";
@@ -131,7 +131,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBD98F8F1E01CDCB00A68002 /* main.swift in Sources */,
-				BB70777C1E0B1D7200CDC009 /* HTMLDoc.swift in Sources */,
+				BB70777C1E0B1D7200CDC009 /* HTMLDocument.swift in Sources */,
 				BBD98F961E01CE4700A68002 /* HTMLElement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

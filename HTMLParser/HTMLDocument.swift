@@ -8,20 +8,20 @@
 
 import Foundation
 
-class HTMLDoc {
+class HTMLDocument {
     var startCharacters = CharacterSet.alphanumerics.union(["<"])
     var textCharacters = CharacterSet.alphanumerics.union(CharacterSet.whitespaces).union(CharacterSet.punctuationCharacters)
     var endCharacters = CharacterSet.newlines.union([">"])
     
     var elements: [HTMLElement]
-    var nsName: NSString?
-    var scan: NSString?
     
     init(document: String) {
         self.elements = []
         var element: HTMLElement
         var parent: HTMLElement?
         let scanner = Scanner(string: document)
+        var nsName: NSString?
+        var scan: NSString?
         
         while !scanner.isAtEnd {
             scanner.scanUpToCharacters(from: startCharacters, into: &nsName)
