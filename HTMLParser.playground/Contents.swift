@@ -96,6 +96,14 @@ if let id = div.attributes["id"] {
     print(id)
 }
 
+var array: [String]?
+
+if let classes = element.attributes["class"] {
+    array = classes.components(separatedBy: " ")
+}
+
+array
+
 class HTMLDoc {
     var startCharacters = CharacterSet.alphanumerics.union(["<"])
     var textCharacters = CharacterSet.alphanumerics.union(CharacterSet.whitespaces).union(CharacterSet.punctuationCharacters)
@@ -159,10 +167,22 @@ class HTMLDoc {
 }
 
 var html = HTMLDoc(document: doc)
-var i = 7
+var elementsDictionary = [String: [HTMLElement]]()
+var elements = html.elements
 
-print(html.simpleDescription())
-print(html.elements[i].fullDescription())
-html.elements.count
-print(html.elements[0].attributes)
+for element in elements {
+    if elementsDictionary[element.name] != nil {
+        elementsDictionary[element.name]?.append(element)
+    } else {
+        elementsDictionary[element.name] = [element]
+    }
+}
+
+elementsDictionary.count
+
+for element in elementsDictionary {
+    print(element.key)
+    print(element.value.count)
+}
+
 
